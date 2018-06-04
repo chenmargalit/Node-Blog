@@ -1,0 +1,68 @@
+<% include ../partials/header %>
+<div class="backgroundColor">
+<div class="container">
+  <div class="jumbotron">
+      
+      <% if(currentUser && currentUser.isAdmin) { %>
+          <h1 class="h1-admin"> you're an admin </h1>
+      <% } %>
+      
+<h1 class="display-4"> All attractions page</h1>
+<button type="button" class="btn btn-primary"><a class="add-attraction" href="/att/new">Add another place</a></button>
+        
+                <p>
+            	<form action="/att" method="GET" class="form-inline search-button">
+            		<div class="form-group">
+            			<input type="text" name="search" placeholder="Search Activity" autofocus class="form-control">
+            			<button type="submit" class="search-button"></button>
+            		</div>
+            	</form>
+            </p>
+           
+            
+</div>
+
+         <% if(noMatch !== null) { %>
+                     <h3 class="h3-noMatch"><%= noMatch %></h3>
+                      <% } %>
+
+    <div class="row" style="display:flex; flex-wrap: wrap;">
+ <% atts.forEach (function(att) {  %>
+ <div class="col-md-4 col-sm-6">
+     <div class="caption">
+ <h4 class="padding att-name"> <%= att.name %></h4>
+ </div>
+
+  <div class="row">
+      <div class="thumbnail">
+  <img style="height: 250px" class="img-thumbnail" src="<%= att.image %>">
+  
+   </div>
+   <div class="center text">
+       <% if(att.text && att.text.length > 0) { %>
+<p><%= att.text.substring(0, 100)%><strong>... [,]</strong></p>
+<% } %>
+ 
+   <br>
+   </div>
+ <button class="btn btn-primary add"><a class="white" href="/att/<%= att._id %>">More Info</a></button>
+ 
+
+
+     
+    </div>
+    </div>
+<% }); %>
+
+</div>
+
+
+
+
+
+</div>
+</div>
+<% include ../partials/footer %>
+
+
+

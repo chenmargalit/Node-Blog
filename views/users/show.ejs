@@ -1,0 +1,27 @@
+<% include ../../partials/header.ejs %>
+<div class="container">
+        <div class="jumbotron jumbrotronProfile">
+        <h1 class="h1-profile"><%="profile of " + user.firstname + " " + user.lastname %></h1>
+        </div>
+        <div class="col-lg-6">
+
+        <img class="img-thumbnail img-fluid card-img-top lg together" src="<%=user.avatar%>">
+        <h3 class="profile-suggestions"><%=user.username%>'s suggestions</h3>
+        <ul>
+        <%attractions.forEach(function(attraction) { %>
+        <li><a class="together" href="/att/<%=attraction.id%>"><%= attraction.name %></a></li>
+        <% }); %>
+        </ul>
+        <% if(currentUser && user._id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+        <button class="profile-edit-Button together"><a href="/users/<%=user._id%>/edit">Edit</a></button>
+    </div>
+  
+<br>
+<% } %>
+</div>
+
+
+<% include ../../partials/footer.ejs %>
+
+    
+  

@@ -1,0 +1,59 @@
+<% include ../partials/header.ejs %>
+<div class="card center">
+      <h5 class="card-title headline"><%= att.name %></h5>
+        
+        <img class="img-thumbnail img-fluid card-img-top lg" src="<%= att.image %>">
+        <h4 class="pull-right time">It takes about <%= att.time %> minutes to get there</h4>
+        <div class="alert alert-info lead card-body black"><%= att.text %></p>
+        <p>
+            <em>Submitted by: <a href="/users/<%=att.author.id%>"><%= att.author.username %></a>, <%= moment(att.createdAt).fromNow() %></em>
+        </p>
+        </div>
+    <div class="jumbotron-small">
+        <% if(currentUser) { %>
+        <button class="btn btn-success comment-button"><a class="white" href="/att/<%= att._id %>/comment/new">Comment</a></button>
+        <% } %>
+        <% if(currentUser && att.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+
+        <button class="btn btn-warning edit-button"><a class="white" href="/att/<%= att._id %>/edit">Edit</a></button>
+        <form class="form" action="/Att/<%= att._id %>?_method=DELETE" method="POST">
+        <button class="btn btn-danger delete-button">Delete</button>
+        <% } %>
+        </form>
+       
+  </div>
+    </div>
+    <% if(att.comments.length > 0) { %>
+ <div class="jumbotron"> 
+<% att.comments.forEach(function(comment) { %> 
+    <br>
+    <br>
+        <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
+          <p>
+            <strong> Author: <%= comment.author.username %> </strong>
+            <br>
+                 <strong>Comment:</strong> <%= comment.text %>
+          </p>
+          <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+          <a class="btn btn-xs btn-warning edit-button" href="/att/<%=att._id%>/comment/<%=comment._id%>/edit">Edit</a>
+          <form class="inline" action="/att/<%=att._id%>/comment/<%=comment._id%>?_method=DELETE" method="POST">
+              <input type="submit" class="btn btn-xs btn-danger delete-button" value="Delete">
+              </form>
+            <% } %>
+            
+<% })%>
+       
+     </div>
+     
+     <% }  else { %>
+        <div class="first-comment">
+            <br>
+            <h3> Be the first to comment !</h3>
+            <br>
+        </div>
+        <% } %>
+
+        
+<% include ../partials/footer.ejs %>
+
+

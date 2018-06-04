@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<div class="container">
+
+    <header class="jumbotron">
+<H1> What should I do in Berlin?</H1>
+</header>
+
+
+
+<form action="/att" method="POST">
+      <div class="form-group">
+
+            <label>Name</label>
+    <input type="text" name="Att[name]" class="form-control" id="exampleInputEmail1" placeholder="What's the name of the place?">
+    </div>
+ <div class="form-group">
+
+    <label>Image</label>
+    <input type="text" name="Att[image]" class="form-control" id="exampleInputEmail1" placeholder="How does it look?">
+</div>
+ <label>How far?</label>
+ <div class="form-group">
+      <input class="form-control" type="number" name="Att[time]" placeholder="time" required>
+</div>
+  <div class="form-group">
+    <label>text</label>
+        <input name="Att[text]" type="text" class="form-control" id="exampleInputEmail1" placeholder="Describe it?">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+
+</form>
+
+</div>
+
+<% include ../partials/footer %>
+
+

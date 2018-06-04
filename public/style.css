@@ -1,0 +1,235 @@
+i {
+    font-size: 2em;
+    padding-left: 10px;
+}
+
+
+.add {
+    text-decoration: none;
+    color: white;
+    margin-left: 30%;
+    margin-bottom: 12%;
+    margin-top: -5%;
+}
+
+#username {
+    color: white;
+ 
+}
+
+#delete-form {
+    display: inline;
+}
+
+.img-responsive {
+    width: auto;
+    height: 5px;
+}
+
+.form {
+    display: inline;
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+.white {
+    color: white;
+    text-decoration: none;
+}
+
+#desc {
+    background: #ffe680;
+    width: 100%;
+   
+}
+
+.center {
+      width: 50%;
+        left: 23%;
+        margin-top: 5%;
+ 
+        vertical-align: middle
+}
+
+.center-small {
+    
+    display: inline-block;
+   
+    margin-top: 5%;
+    color: white;
+    text-decoration: none;
+}
+
+.jumbotron {
+    width: 75%;
+    margin-left: 12.5%;
+    margin-top: 5%;
+  
+}
+
+.backgroundColor {
+    background-color: #fff9e6;
+}
+
+.inline {
+    display: inline;
+}
+
+.jumbotron-small {
+    width: 50%;
+    left: 25%;
+
+}
+
+.name {
+    text-align: center;
+    font-weight: 900;
+}
+
+.headline {
+    font-weight: 700;
+    text-align: center;
+    font-size: 2.5em;
+    color: #009933;
+    padding-top: 2%;
+}
+
+.black {
+    color: black;
+    font-weight: 500; 
+}
+
+.btn-xs {
+    font-size: 0.7em;
+}
+
+.register {
+    margin: 3%;
+}
+
+.add-attraction {
+    color: white;
+    margin: 3%;
+}
+
+.jumbotron {
+    padding: 0.8em 1em;
+    background: #ffbf80;
+}
+
+.display-4 {
+    margin-top: 3%;
+}
+
+.time {
+    color: darkorange;
+    padding: 2.5%;
+    font-size: 1.2em;
+}
+
+form, .register {
+    width: 50%;
+    
+    
+    margin-left: 25%;
+}
+
+.jumbrotronProfile {
+    width: 100%;
+    margin: 5%;
+}
+
+.delete-button, .edit-button, .comment-button {
+    float: left;
+    margin-left: 1%;
+    
+}
+
+.forgotButton {
+    margin-left: 70%;
+    display: inline-block;
+    margin-top: -4.5%;
+}
+
+.text {
+    width: 90%;
+    padding: 3%;
+}
+
+.edit-comment, .new-comment, .h1-profile, .profile-suggestions, .form-head, .att-name, .login, .first-comment, #center, .display-4, .h1-admin,
+.h3-noMatch{
+    text-align: center;
+}
+
+.profile-edit-Button {
+	-moz-box-shadow: 0px 1px 0px 0px #fff6af;
+	-webkit-box-shadow: 0px 1px 0px 0px #fff6af;
+	box-shadow: 0px 1px 0px 0px #fff6af;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+	background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
+	background-color:#ffec64;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+	float: right;
+	margin-bottom: 10%;
+}
+.profile-edit-button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+	background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
+	background-color:#ffab23;
+}
+.profile-edit-button:active {
+	position:relative;
+	top:1px;
+}
+
+.together {
+    display: inline-block;
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+.search-button {
+  background: none;
+  padding: 0;
+  border: none;
+  position: relative;
+  margin-left: 37.5%;
+
+}
+
+.search-icon {
+    display: inline;
+}
+
+h3-noMatch {
+    font-weight: 900;
+}

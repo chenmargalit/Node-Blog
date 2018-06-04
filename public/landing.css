@@ -1,0 +1,102 @@
+body {
+  background-color: #000;
+}
+
+#landing-header {
+  z-index: 1;
+  position: relative; /*/ needs to be anything but static (which is the default) /*/
+  text-align: center;
+  padding-top: 40vh;
+
+}
+
+#landing-header h1 {
+  color: white;
+}
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0; /*/ because this has a lower Z index than the header, it will show behind. the heighest Z index wins /*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { /*/ each sepcific li /*/
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover; /*/ allows the images to take the entire space of the page /*/
+  background-position: 50% 50%; /* centers the images /*/
+  background-repeat: no-repeat;
+  opacity: 0; /* we want them to start faded out, not seen, then animation will come and fade them in /*/
+  z-index: 0;
+  animation: imageAnimation 25s linear infinite; /*/ image animation could be antyhing. 50s for the entire animation, every full round.
+  linear so it will appear in a constant speed. inifinate so it never stops. /*/
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(https://lh6.ggpht.com/BqCV9BxusmWrgJlxegNkxTn-vdglkIWs5p-iethwZYTNmKTy1gf1nq6bjizG) /* first image starts as directly the page loads /*/
+    
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://i1.wp.com/www.theculturemap.com/wp-content/uploads/2014/02/Rosenthaler-Berlin_hackeschermarkt.jpg?resize=840%2C560); /* every image (from the second) has a 10 seconds start delay, that means
+  the first one starts, then after 10 seconds the second, 20 secounds from the start the 3rd comes in and so on /*/
+  animation-delay: 5s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://www1.wdr.de/radio/wdr5/berliner-blick100~_v-gseapremiumxl.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://assets.isango.com/productimages/product/91/berlin_21791_1.jpg);
+  animation-delay: 15s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(https://www.tagesspiegel.de/images/flohmarkt-am-mauerpark-tagesspiegel-mehr-berlin_17817369392_l/11856238/2-format43.jpg);
+  animation-delay: 20s; /*/ currently it's all with opacity of 0, so nothing runs. the next code will change it's opacity,
+  meaning it will make it show /*/
+}
+
+@keyframes imageAnimation { /* image animation matches the name in the begining of the code */
+  0% { 
+    opacity: 0; /* every images is at opacity of 1 for 20% of the time, 5 images like that, that's 100% of the time, there is some photo.
+    0%-10% it becomes 1, than 10%-20% it stays 1, then 20%-30% it disappears. in the last stage, 20-30, the next photo already starts
+    its first stage. so in paralel, by the time the first photo fades out completely, the next week is completely shown/*/
+    animation-timing-function: ease-in; /* just one kind of animation */
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+      
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+    opacity: 1;
+} /* this was added by teh modernizr, if the browswer doesn't have an animation support, it just changes the opacity of the first 
+photo to 1, then the first photo is the background, no animtion, regular image background */
+
+
+
+
+
+
+
+
+
+
+
+

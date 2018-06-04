@@ -1,0 +1,30 @@
+<% include ../../partials/header %>
+<div class="container">
+
+<header class="jumbotron">
+    <H1 class="new-comment"> Add a new comment to <%= Att.name %></H1>
+</header>
+
+
+
+<form action="/att/<%= Att._id %>/comment" method="POST">
+    <!--  <div class="form-group">-->
+
+    <!--        <label>Author</label>-->
+    <!--<input type="text" name="comment[author]" class="form-control" id="exampleInputEmail1" required>-->
+    <!--</div>-->
+    
+  <div class="form-group">
+    <label>Comment</label>
+        <input name="comment[text]" class="form-control" id="exampleInputEmail1" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+</form>
+
+</div>
+
+<% include ../../partials/footer %>
+
+
