@@ -1,6 +1,7 @@
-var     express = require("express"),
-    router = express.Router({mergeParams: true}),
-    Attraction = require("../models/attractions"),
+var express = require("express");
+var router  = express.Router({mergeParams: true});
+
+var Attraction = require("../models/attractions"),
     Comment = require("../models/comments");
     
 
