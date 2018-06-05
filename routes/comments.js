@@ -1,10 +1,8 @@
 var express = require("express");
-var router  = express.Router({mergeParams: true});
+var router = express.Router({mergeParams: true});
 
 var Attraction = require("../models/attractions");
 var Comment = require("../models/comments");
-    
-
 
 
 router.get("/new",isLoggedIn, function(req, res) {
