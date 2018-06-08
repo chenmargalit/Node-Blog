@@ -20,8 +20,9 @@ var commentRoutes = require("./routes/comments"),
     attractionRoutes = require("./routes/attractions"),
     indexRoutes = require("./routes/index");
  
-
-mongoose.connect("mongodb://localhost/BerlinDemo");    
+mongodb://chen:bakugann20@ds247410.mlab.com:47410/chen_berlin
+mongoose.connect("mongodb://chen:bakugann20@ds247410.mlab.com:47410/chen_berlin");    
+// mongoose.connect("mongodb://localhost/BerlinDemo");    
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.set("view engine", "ejs");
