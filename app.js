@@ -21,7 +21,7 @@ var commentRoutes = require("./routes/comments"),
     indexRoutes = require("./routes/index");
 
 
-mongodb://chen:worms12@ds161700.mlab.com:61700/chen
+mongoose.connect("mongodb://chen:worms12@ds161700.mlab.com:61700/chen");
 // mongoose.connect("mongodb://chen:worms12@ds247410.mlab.com:47410/chenBerlin");
 // mongoose.connect("mongodb://localhost/BerlinDemo");    
 app.use(bodyParser.urlencoded({extended: true}));
