@@ -27,7 +27,7 @@ router.post("/register", function (req, res) {
    lastname: req.body.lastname,
    email: req.body.email,
    avatar: req.body.avatar,
-   isAdmin: req.body.isAdmin
+   isAdmin: req.body.adminCode
    });
 
   if(req.body.adminCode === "123") {
