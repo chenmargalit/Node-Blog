@@ -234,3 +234,11 @@ ul {
 h3-noMatch {
     font-weight: 900;
 }
+
+.new {
+    text-align: center;
+}
+
+.newAtt {
+    margin-left: 40%;
+}
