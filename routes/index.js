@@ -27,12 +27,13 @@ router.post("/register", function (req, res) {
    lastname: req.body.lastname,
    email: req.body.email,
    avatar: req.body.avatar,
+   isAdmin: req.body.isAdmin
    });
 
   if(req.body.adminCode === "123") {
       newUser.isAdmin = true;
   }
-  dsnjdksdnsk
+
   
   User.register(newUser, req.body.password, function(err, newlyCreatedUser) {
       if (err) {
