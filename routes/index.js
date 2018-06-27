@@ -49,9 +49,12 @@ router.post("/register", function (req, res) {
   });
 
 //show login form
-router.get("/login", function(req, res) {
+router.get("/login", function(err, req, res) {
     res.render("login");
-        error: req.flash('error');
+    if (err) {
+    req.flash("error", err.message);
+    }
+        
 });
 
 //Handeling login logic
@@ -222,16 +225,23 @@ router.post('/reset/:token', function(req, res) {
   async.waterfall([
     function(done) {
       User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
-        if (!user) {
+        if (err)
+        if(!user) {
           req.flash('error', 'Password reset token is invalid or has expired.');
           return res.redirect('back');
         }
         if(req.body.password === req.body.confirm) {
           user.setPassword(req.body.password, function(err) {
+            if (err) {
+              req.flash("error", 'please try again')
+            }
             user.resetPasswordToken = undefined;
             user.resetPasswordExpires = undefined;
 
             user.save(function(err) {
+              if (err) {
+                req.flash("error", 'please try again')
+              }
               req.logIn(user, function(err) {
                 done(err, user);
               });

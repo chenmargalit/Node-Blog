@@ -1,67 +1,36 @@
 <% include ../partials/header %>
-<div class="backgroundColor">
-<div class="container">
-  <div class="jumbotron">
+<div id="slides" class="carousel slide" data-ride="carousel">
+	<ul class="carousel-indicators">
+		<li data-target="#slides" data-slide-to="0" class="active"></li>
+		<li data-target="#slides" data-slide-to="1"></li>
+		<li data-target="#slides" data-slide-to="2"></li>
+	</ul>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img src="https://images3.alphacoders.com/816/thumb-1920-816092.jpg">
+			<div class="carousel-caption">
+				<h1 class="display-2">Berlin</h1>
+					<h3> Website Layout </h3>
+					<button type="button" class="btn btn-outline-light btn-lg">View Demo</button>
+					<button type="button" class="btn btn-primary btn-lg">Get Started</button>
+		</div>
+	</div>
+		<div class="carousel-item">
+			<img src="http://s1.1zoom.me/big0/510/Coast_Bridges_Rivers_469371.jpg">
+		</div>
+		<div class="carousel-item">
+			<img src="https://images5.alphacoders.com/700/thumb-1920-700745.jpg">
+		</div>
+</div>
+</div>
       
-      <% if(currentUser && currentUser.isAdmin) { %>
-          <h1 class="h1-admin"> you're an admin </h1>
-      <% } %>
       
-<h1 class="display-4"> All attractions page</h1>
-<button type="button" class="btn btn-primary newAtt"><a class="add-attraction" href="/att/new">Add another place</a></button>
-        
-                <p>
-            	<form action="/att" method="GET" class="form-inline search-button">
-            		<div class="form-group">
-            			<input type="text" name="search" placeholder="Search Activity" autofocus class="form-control">
-            			<button type="submit" class="search-button"></button>
-            		</div>
-            	</form>
-            </p>
-           
-            
-</div>
-
-         <% if(noMatch !== null) { %>
-                     <h3 class="h3-noMatch"><%= noMatch %></h3>
-                      <% } %>
-
-    <div class="row" style="display:flex; flex-wrap: wrap;">
- <% atts.forEach (function(att) {  %>
- <div class="col-md-4 col-sm-6">
-     <div class="caption">
- <h4 class="padding att-name"> <%= att.name %></h4>
- </div>
-
-  <div class="row">
-      <div class="thumbnail">
-  <img style="height: 250px" class="img-thumbnail" src="<%= att.image %>">
-  
-   </div>
-   <div class="center text">
-       <% if(att.text && att.text.length > 0) { %>
-<p><%= att.text.substring(0, 100)%><strong>... [,]</strong></p>
-<% } %>
- 
-   <br>
-   </div>
- <button class="btn btn-primary add"><a class="white" href="/att/<%= att._id %>">More Info</a></button>
- 
-
-
-     
-    </div>
-    </div>
-<% }); %>
-
-</div>
-
-
-
-
-
-</div>
-</div>
+      
+      
+      
+      
+      
+      
 <% include ../partials/footer %>
 
 
