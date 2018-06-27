@@ -49,11 +49,8 @@ router.post("/register", function (req, res) {
   });
 
 //show login form
-router.get("/login", function(err, req, res) {
+router.get("/login", function(req, res) {
     res.render("login");
-    if (err) {
-    req.flash("error", err.message);
-    }
         
 });
 
