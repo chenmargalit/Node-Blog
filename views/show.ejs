@@ -4,8 +4,10 @@
         
         <img class="img-thumbnail img-fluid card-img-top lg" src="<%= att.image %>">
         <h4 class="pull-right time">It takes about <%= att.time %> minutes to get there</h4>
-        <div class="alert alert-info lead card-body black"><%= att.text %></p>
-        <p>
+        <div>
+        <div class="alert alert-info lead card-body black att-desc"><%= att.text %></p>
+        </div>
+        <p class="submitted">
             <em>Submitted by: <a href="/users/<%=att.author.id%>"><%= att.author.username %></a>, <%= moment(att.createdAt).fromNow() %></em>
         </p>
         </div>
@@ -32,7 +34,11 @@
           <p>
             <strong> Author: <%= comment.author.username %> </strong>
             <br>
-                 <strong>Comment:</strong> <%= comment.text %>
+        
+                 <strong>Comment:</strong> <span class="comment-text"><%= comment.text %></span>
+                 <br>
+                 ----------------------------------------------------------------------------------------
+            
           </p>
           <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
           <a class="btn btn-xs btn-warning edit-button" href="/att/<%=att._id%>/comment/<%=comment._id%>/edit">Edit</a>
@@ -48,7 +54,7 @@
      <% }  else { %>
         <div class="first-comment">
             <br>
-            <h3> Be the first to comment !</h3>
+            <h3 class="firstComment"> Be the first to comment !</h3>
             <br>
         </div>
         <% } %>

@@ -1,9 +1,19 @@
+body {
+    background: #262626;
+}
+
 i {
     font-size: 2em;
     padding-left: 10px;
 }
 
+.navbar {
+    background: #00cccc;
+}
 
+.nav-link {
+    color: black;
+}
 
 .add {
     text-decoration: none;
@@ -38,7 +48,7 @@ a {
 }
 
 .white {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
@@ -49,11 +59,11 @@ a {
 }
 
 .center {
-      width: 50%;
-        left: 23%;
-        margin-top: 5%;
- 
-        vertical-align: middle
+    width: 50%;
+    left: 23%;
+    margin-top: 5%;
+    vertical-align: middle;
+    color: white;
 }
 
 .center-small {
@@ -67,7 +77,8 @@ a {
 
 .jumbotron {
     width: 100%;
-   
+    padding: 0.8rem;
+    background: #33cccc;
     margin-top: 5%;
 }
 
@@ -112,11 +123,6 @@ a {
     margin-left: 39%;
 }
 
-.jumbotron {
-    padding: 0.8em 1em;
-    background: #ffbf80;
-}
-
 .display-4 {
     margin-top: 3%;
 }
@@ -142,6 +148,7 @@ form, .register {
 .delete-button, .edit-button, .comment-button {
     float: left;
     margin-left: 1%;
+    color: black;
     
 }
 
@@ -241,3 +248,32 @@ h3-noMatch {
 .add-option-word {
     color: white;
 }
+
+.submitted {
+    font-size: 1rem;
+    color: black;
+}
+
+.att-desc {
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.comment-text, .firstComment, .att-name {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+@media (max-width: 420px) {
+    .center {
+        text-align: center;
+  }
+}
+
