@@ -8,12 +8,11 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
     </head>
-    <body>
-        <div class="backgroundColor">
-    <div class="container">
-    <nav class="navbar navbar-dark bg-dark nav justify-content-end">
+    
+ <body>
+ 
+    <nav class="navbar bg-dark nav">
     <ul class="nav justify-content-end">
        <% if(currentUser){ %>
     <li class="nav-item">
@@ -40,7 +39,7 @@
              <% } %>
         </ul>
     </nav>
-</div>
+
       
       <div class="container">
           <% if(error && error.length > 0){ %>
@@ -56,4 +55,4 @@
           </div>
           <% } %>
       </div>
-</div>
+

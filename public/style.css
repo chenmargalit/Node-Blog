@@ -4,6 +4,7 @@ i {
 }
 
 
+
 .add {
     text-decoration: none;
     color: white;
@@ -68,12 +69,6 @@ a {
     width: 100%;
    
     margin-top: 5%;
-    
-  
-}
-
-.backgroundColor {
-    background-color: #fff9e6;
 }
 
 .inline {
@@ -83,7 +78,6 @@ a {
 .jumbotron-small {
     width: 50%;
     left: 25%;
-
 }
 
 .name {
@@ -113,8 +107,9 @@ a {
 }
 
 .add-attraction {
+    text-align: center;
     color: white;
-    margin: 3%;
+    margin-left: 39%;
 }
 
 .jumbotron {
@@ -241,4 +236,8 @@ h3-noMatch {
 
 .newAtt {
     margin-left: 40%;
+}
+
+.add-option-word {
+    color: white;
 }
