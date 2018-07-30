@@ -6,7 +6,8 @@ var express = require ("express"),
     async = require("async"),
     nodemailer = require("nodemailer"),
     crypto = require("crypto");
-    require('dotenv').config();
+    require('dotenv/config');
+    require("../../env")
 
 
     
@@ -184,7 +185,7 @@ router.post('/forgot', function(req, res, next) {
         service: 'Gmail', 
         auth: {
           user: 'tt7417492@gmail.com',
-          pass: 'm23beck8'
+          pass: process.env.PASS
         }
       });
       var mailOptions = {
@@ -255,7 +256,7 @@ router.post('/reset/:token', function(req, res) {
         service: 'Gmail', 
         auth: {
           user: 'tt7417492@gmail.com',
-          pass: 'm23beck8'
+          pass: process.env.PASS
         }
       });
       var mailOptions = {
