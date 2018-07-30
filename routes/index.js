@@ -1,3 +1,4 @@
+
 var express = require ("express"),
     router = express.Router(),
     passport = require("passport"),
@@ -6,16 +7,9 @@ var express = require ("express"),
     async = require("async"),
     nodemailer = require("nodemailer"),
     crypto = require("crypto");
-    require('dotenv/config');
-    require("../../env")
 
-
-    
-    
-    
 
 // Register Routs //
-
 router.get("/register", function (req, res) {
     res.render("register");
 });
@@ -52,6 +46,9 @@ router.post("/register", function (req, res) {
 //show login form
 router.get("/login", function(req, res) {
     res.render("login");
+       console.log('testing in app.js 123');
+console.log(process.env.EMAIL);
+console.log(process.env.PASS);
         
 });
 
@@ -71,6 +68,8 @@ router.get("/logout", function(req, res) {
    req.flash("success", "Logged you out successfully " + req.user.username);
    req.logout();
    res.redirect("/att");
+
+  
 });
 
 function isLoggedIn (req, res, next) {
@@ -184,13 +183,13 @@ router.post('/forgot', function(req, res, next) {
       var smtpTransport = nodemailer.createTransport({
         service: 'Gmail', 
         auth: {
-          user: 'tt7417492@gmail.com',
+          user: process.env.EMAIL,
           pass: process.env.PASS
         }
       });
       var mailOptions = {
         to: user.email,
-        from: 'tt7417492@gmail.com',
+        from: process.env.EMAIL,
         subject: 'Node.js Password Reset',
         text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
@@ -255,7 +254,7 @@ router.post('/reset/:token', function(req, res) {
       var smtpTransport = nodemailer.createTransport({
         service: 'Gmail', 
         auth: {
-          user: 'tt7417492@gmail.com',
+          user: process.env.EMAIL,
           pass: process.env.PASS
         }
       });

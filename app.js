@@ -1,3 +1,6 @@
+
+require('dotenv').config()
+    
 var express     = require("express"),
     app         = express(),
     methodOverride = require("method-override"),
@@ -62,8 +65,6 @@ app.get("/", function(req, res) {
 });
     
 
-
-  
     
  
     
