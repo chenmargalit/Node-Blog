@@ -277,36 +277,7 @@ router.post('/reset/:token', function(req, res) {
 
   
   
- 
-//Middleware
-// function checkCampgroundOwnership(req, res, next) {
-//  if(req.isAuthenticated()){
-//         User.findById(req.params.id, function(err, foundAttraction){
-//           if(err){
-//               req.flash("error", "Attraction not found");
-//               res.redirect("back");
-//           }  else {
- 
-//             // Added this block, to check if foundCampground exists, and if it doesn't to throw an error via connect-flash and send us back to the homepage
-//             if (!foundAttraction) {
-//                     req.flash("error", "Item not found.");
-//                     return res.redirect("back");
-//                 }
-//             // If the upper condition is true this will break out of the middleware and prevent the code below to crash our application
-//             if(foundAttraction.author.id.equals(req.user._id) || req.user.isAdmin) {
-//                 console.log("Check campground ownership passed.");
-//                 next();
-//             } else {
-//                 req.flash("error", "You don't have permission to do that");
-//                 res.redirect("back");
-//             }
-//           }
-//         });
-//     } else {
-//         req.flash("error", "You need to be logged in to do that");
-//         res.redirect("back");
-//     }
-// }
+
  
  
 module.exports = router;
