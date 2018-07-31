@@ -46,10 +46,6 @@ router.post("/register", function (req, res) {
 //show login form
 router.get("/login", function(req, res) {
     res.render("login");
-       console.log('testing in app.js 123');
-console.log(process.env.EMAIL);
-console.log(process.env.PASS);
-        
 });
 
 //Handeling login logic
